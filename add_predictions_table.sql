@@ -7,7 +7,7 @@ CREATE TABLE predictions (
     student_id VARCHAR(255) NOT NULL,
     student_name VARCHAR(255),
     department VARCHAR(255),
-    result VARCHAR(50) NOT NULL CHECK (result IN ('Good Standing', 'Moderate Risk', 'At-Risk')),
+    result VARCHAR(50) NOT NULL CHECK (result IN ('Good Standing', 'At-Risk')),
     confidence NUMERIC,
     model_used VARCHAR(100),
     strengths JSONB DEFAULT '[]'::jsonb,

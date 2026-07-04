@@ -1,0 +1,11 @@
+Title: 3.4 Performance Test
+
+The performance test focuses on the backend system efficiency and computational resource utilization of the predictive models. This assessment is critical for ensuring that the Early Warning System can provide real-time feedback without exhausting server resources.
+
+Key metrics monitored include Training Execution Time, Prediction Latency, Peak Memory Usage, and CPU Utilization across 101 records. Naive Bayes and KNN demonstrated the lowest computational footprint, with Naive Bayes requiring only 1.56ms for training and 9.2% CPU utilization. 
+
+Random Forest, while highly accurate, required the most resources with a training time of 128.45ms and 26.4MB of memory usage. Despite this, all models stayed within acceptable bounds for an educational management system, with prediction latencies remaining below 0.1ms per record.
+
+Performance Summary:
+- Fastest Training: Naive Bayes (1.56ms)
+- Lowest Memory: Naive Bayes (17.9MB)

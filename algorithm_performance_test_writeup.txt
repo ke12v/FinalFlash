@@ -1,0 +1,10 @@
+Title: 3.5 Algorithm Performance Test
+
+This section presents a comparative analysis of the five candidate algorithms: Decision Tree, Random Forest, SVM, KNN, and Naive Bayes. The comparison integrates both predictive accuracy and computational efficiency to determine the most suitable model for long-term deployment.
+
+Random Forest is the superior algorithm regarding predictive metrics (Accuracy: 95.83%, ROC-AUC: 0.985), making it the preferred choice for high-stakes risk identification. However, for environments with limited hardware, Decision Tree offers a compelling balance of high accuracy (91.67%) and significantly lower training time (2.45ms).
+
+Naive Bayes and KNN, while efficient, exhibited lower precision and recall, suggesting they may overlook certain nuances in student behavior compared to ensemble methods.
+
+Conclusion:
+Random Forest is recommended as the primary classification engine, with Decision Tree serving as a high-speed alternative.

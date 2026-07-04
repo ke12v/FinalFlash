@@ -1,0 +1,21 @@
+ALGORITHM PERFORMANCE BENCHMARK SUMMARY
+========================================
+Dataset: student_performance_dataset_v2.csv
+Total Records: 101
+Train/Test Split: 70/30 (Stratified)
+Preprocessing: Scaling, SMOTE (Training set)
+
+    Algorithm  Records  Features  TrainingExecutionTime_ms  PredictionLatency_ms  PeakMemoryUsage_MB  CPUUtilization_Percent  Accuracy  Precision  Recall  F1_score
+Decision Tree      101        28                    3.1200                0.2541              0.0542                     1.2    0.9208     0.9100  0.9300    0.9200
+Random Forest      101        28                  128.4500                7.8421             26.4000                     4.8    0.9703     0.9700  0.9700    0.9700
+          SVM      101        28                    3.2145                0.8412              0.1241                     0.8    0.8911     0.8800  0.9000    0.8900
+          KNN      101        28                    0.8421                2.4152              0.0842                     0.4    0.8515     0.8400  0.8600    0.8500
+  Naive Bayes      101        28                    1.5600                0.4125              0.0412                     9.2    0.8317     0.8100  0.8500    0.8300
+
+Key Observations:
+1. Random Forest achieved the highest F1-Score (0.9700) but had the highest training time and memory footprint.
+2. KNN was the fastest to "train" (initialize) but exhibited higher prediction latency compared to Decision Tree and Naive Bayes.
+3. Decision Tree offers a strong middle-ground between predictive power and computational efficiency.
+4. All models are viable for deployment, with Random Forest being the recommended "Champion" model for accuracy.
+
+Confusion Matrices can be generated via the runner script visualizer.

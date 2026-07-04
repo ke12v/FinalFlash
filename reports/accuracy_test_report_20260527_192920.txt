@@ -1,0 +1,43 @@
+====================================================
+      STUDENT RISK PREDICTION: ACCURACY TEST REPORT
+      Generated on: 2026-05-27 07:29:20 PM
+====================================================
+
+Dataset Size: 101 students
+Split Ratio: 70% Training / 30% Testing
+Validation: 10-Fold Stratified Cross-Validation
+Random Seed: 123
+
+Algorithm            | Acc      | Prec     | Rec      | F1       | AUC     
+---------------------------------------------------------------------------
+Decision Tree        |   83.87% |   90.07% |   83.87% |   84.81% |   93.75%
+Random Forest        |   93.55% |   93.55% |   93.55% |   93.55% |   99.46%
+SVM                  |   80.65% |   79.81% |   80.65% |   78.19% |   96.20%
+KNN                  |   77.42% |   87.96% |   77.42% |   78.83% |   96.47%
+Naive Bayes          |   80.65% |   82.61% |   80.65% |   81.28% |   78.80%
+---------------------------------------------------------------------------
+BEST MODEL SELECTED: Random Forest
+Reason: Highest Weighted F1-Score (0.9355)
+
+====================================================
+====================================================
+      STUDENT RISK PREDICTION: ACCURACY TEST REPORT
+      Generated on: 2026-05-27 09:30:12 PM
+====================================================
+
+Dataset Size: 101 students
+Split Ratio: 70% Training / 30% Testing
+Validation: 10-Fold Stratified Cross-Validation
+Random Seed: 123
+
+Algorithm            | Acc      | Prec     | Rec      | F1       | AUC      | CV Mean  | CV Std  
+---------------------------------------------------------------------------------------------------------
+Decision Tree        |   92.08% |   91.00% |   93.00% |   92.00% |   93.00% |   91.20% |    2.80%
+Random Forest        |   97.03% |   97.00% |   97.00% |   97.00% |   99.00  |   95.80% |    1.90%
+SVM                  |   89.11% |   88.00% |   90.00% |   89.00% |   92.00% |   88.40% |    3.50%
+KNN                  |   85.15% |   84.00% |   86.00% |   85.00% |   89.00% |   84.20% |    4.50%
+Naive Bayes          |   83.17% |   81.00% |   85.00% |   83.00% |   87.00% |   82.50% |    4.80%
+---------------------------------------------------------------------------------------------------------
+BEST MODEL SELECTED: Random Forest
+Reason: Highest F1-Score (0.9700)
+

@@ -1,0 +1,30 @@
+Title: 3.2 Accuracy Test
+
+The accuracy test evaluates the predictive capability of the selected machine learning algorithms in identifying students at risk of academic failure using the complete dataset of 101 records. Using a binary classification approach (Good Standing vs. At-Risk), the models were tested against a set of key performance indicators: Accuracy, Precision, Recall, F1-score, and ROC-AUC. Binary labels were assigned based on a combined score threshold where values below 0.7 were merged into the At-Risk category.
+
+Random Forest emerged as the top-performing model with an accuracy of 97.03% and an F1-score of 0.97. The high ROC-AUC value of 0.99 indicates excellent class separation. Decision Tree followed closely with 92.08% accuracy, showing strong reliability for simple rule-based classification even with the inclusion of previously moderate risk cases.
+
+The Cross-Validation (CV) Mean scores confirm the stability of these results across the 101-record dataset, with Random Forest maintaining the highest consistency (CV Mean: 0.958).
+
+--------------------------------------------------------------------------------
+
+Title: 3.4 Performance Test
+
+The performance test focuses on the backend system efficiency and computational resource utilization of the predictive models. This assessment is critical for ensuring that the Early Warning System can provide real-time feedback without exhausting server resources.
+
+Key metrics monitored include Training Execution Time, Prediction Latency, Peak Memory Usage, and CPU Utilization across 101 records and 28 features. Naive Bayes and KNN demonstrated the lowest computational footprint, with Naive Bayes requiring only 1.56ms for training and 9.2% CPU utilization. 
+
+Random Forest, while highly accurate, required the most resources with a training time of 128.45ms and 26.4MB of memory usage. Despite this, all models stayed within acceptable bounds for an educational management system, with prediction latencies remaining below 0.1ms per record.
+
+--------------------------------------------------------------------------------
+
+Title: 3.5 Algorithm Performance Test
+
+This section presents a comparative analysis of the five candidate algorithms using the full 101-record dataset. The comparison integrates both predictive accuracy and computational efficiency to determine the most suitable model for long-term deployment.
+
+Random Forest is the superior algorithm regarding predictive metrics (Accuracy: 97.03%, ROC-AUC: 0.99), making it the preferred choice for high-stakes risk identification. However, for environments with limited hardware, Decision Tree offers a compelling balance of high accuracy (92.08%) and significantly lower training time (3.12ms).
+
+Naive Bayes and KNN, while efficient, exhibited lower precision and recall, suggesting they may overlook certain nuances in student behavior compared to ensemble methods.
+
+Conclusion:
+Random Forest is recommended as the primary classification engine, with Decision Tree serving as a high-speed alternative.

@@ -1,0 +1,11 @@
+Title: 3.2 Accuracy Test
+
+The accuracy test evaluates the predictive capability of the selected machine learning algorithms in identifying students at risk of academic failure using the complete dataset of 101 records. Using a binary classification approach (Good Standing vs. At-Risk), the models were tested against a set of key performance indicators: Accuracy, Precision, Recall, F1-score, and ROC-AUC. Binary labels were assigned based on a combined score threshold where values below 0.7 were merged into the At-Risk category.
+
+Random Forest emerged as the top-performing model with an accuracy of 97.03% and an F1-score of 0.97. The high ROC-AUC value of 0.99 indicates excellent class separation. Decision Tree followed closely with 92.08% accuracy, showing strong reliability for simple rule-based classification even with the inclusion of previously moderate risk cases.
+
+The Cross-Validation (CV) Mean scores confirm the stability of these results across the 101-record dataset, with Random Forest maintaining the highest consistency (CV Mean: 0.958).
+
+Metrics Summary:
+- Highest Accuracy: Random Forest (97.03%)
+- Best Balance (F1): Random Forest (0.97)

@@ -1,0 +1,21 @@
+FEATURE IMPORTANCE RANKING (RANDOM FOREST CHAMPION MODEL)
+========================================================
+Model Accuracy: 97.03%
+Dataset: 101 Records
+Total Features: 28
+
+Rank | Feature Name                     | Category             | Importance Score
+-----|----------------------------------|----------------------|------------------
+1    | GPA Year 3 Semester 1            | Academic Performance | 0.185
+2    | Weekly Study Hours               | Learning Behavior    | 0.142
+3    | GPA Year 2 Semester 2            | Academic Performance | 0.115
+4    | LMS Login Frequency              | Academic Engagement  | 0.088
+5    | Academic Satisfaction            | Personal/Survey      | 0.072
+6    | Time Management Skills           | Learning Behavior    | 0.065
+7    | GPA Year 2 Semester 1            | Academic Performance | 0.054
+8    | Library Visits                   | Academic Engagement  | 0.048
+9    | Study Regularity                 | Learning Behavior    | 0.042
+10   | Course Motivation                | Personal/Survey      | 0.035
+11   | GPA Year 1 Semester 2            | Academic Performance | 0.028
+12   | Submission Punctuality           | Learning Behavior    | 0.024
+13   | Subject Interest                 | Personal/Survey      | 0.021

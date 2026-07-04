@@ -83,7 +83,7 @@ def generate_at_risk_student(student_id, risk_type):
         record['motivation_level'] = round(random.uniform(2, 3), 1)
         record['stress_level'] = round(random.uniform(2, 3), 1)
         record['time_management_skills'] = round(random.uniform(2, 3), 1)
-        record['risk_label'] = 2  # High Risk
+        record['risk_label'] = 1  # At-Risk
         
     elif risk_type == 'personal':
         # Personal at-risk: high stress, poor time management, low motivation
@@ -111,7 +111,7 @@ def generate_at_risk_student(student_id, risk_type):
         record['motivation_level'] = round(random.uniform(1, 1.5), 1)  # Very low
         record['stress_level'] = round(random.uniform(1, 1.5), 1)  # Very high stress (reversed)
         record['time_management_skills'] = round(random.uniform(1, 1.5), 1)  # Very poor
-        record['risk_label'] = 2  # High Risk
+        record['risk_label'] = 1  # At-Risk
         
     elif risk_type == 'academic':
         # Academic at-risk: poor academic performance, low engagement
@@ -139,7 +139,7 @@ def generate_at_risk_student(student_id, risk_type):
         record['motivation_level'] = round(random.uniform(2, 3), 1)
         record['stress_level'] = round(random.uniform(2, 3), 1)
         record['time_management_skills'] = round(random.uniform(2, 3), 1)
-        record['risk_label'] = 2  # High Risk
+        record['risk_label'] = 1  # At-Risk
     
     # Add legacy fields
     record['study_hours'] = random.randint(1, 5)
@@ -155,16 +155,13 @@ def generate_at_risk_student(student_id, risk_type):
 def generate_student_record(student_id, risk_class):
     """
     Generate a student record with balanced features.
-    risk_class: 0 = Low Risk, 1 = Moderate Risk, 2 = High Risk
+    risk_class: 0 = Good Standing, 1 = At-Risk
     """
     # Base ranges for each risk class (higher = better performance)
     if risk_class == 0:  # Low Risk (good performance)
         base_range = (3, 4)
         variation = 0.5
-    elif risk_class == 1:  # Moderate Risk
-        base_range = (2, 3)
-        variation = 0.8
-    else:  # High Risk (poor performance)
+    else:  # At-Risk (poor performance)
         base_range = (1, 2)
         variation = 0.6
     
@@ -203,20 +200,16 @@ def generate_student_record(student_id, risk_class):
         elif feature in ['financial_stability', 'scholarship_support_level']:
             # Financial factors - reverse scoring already applied (4 = stable, 1 = difficult)
             # High risk students tend to have lower financial stability
-            if risk_class == 2:  # High risk
+            if risk_class == 1:  # At-Risk
                 base = random.uniform(1, 2.5)
-            elif risk_class == 1:  # Moderate risk
-                base = random.uniform(2, 3.5)
             else:  # Low risk
                 base = random.uniform(2.5, 4)
             value = min(4, max(1, round(base + random.uniform(-0.5, 0.5), 1)))
         elif feature == 'stress_level':
             # Stress level - REVERSE SCORING: high stress = 1, low stress = 4
             # High risk students tend to have higher stress (lower score after reversal)
-            if risk_class == 2:  # High risk - high stress
+            if risk_class == 1:  # At-Risk - high stress
                 original_stress = random.uniform(3, 4)  # High stress
-            elif risk_class == 1:  # Moderate risk
-                original_stress = random.uniform(2, 3)
             else:  # Low risk - low stress
                 original_stress = random.uniform(1, 2.5)
             # Reverse: 5 - original (so high stress becomes low score)
@@ -288,12 +281,10 @@ def calculate_risk_from_features(record):
     )
     
     # Classify based on combined score
-    if combined_score >= 3.2:
-        return 0  # Low Risk
-    elif combined_score >= 2.2:
-        return 1  # Moderate Risk
+    if combined_score >= 2.5:
+        return 0  # Good Standing
     else:
-        return 2  # High Risk
+        return 1  # At-Risk
 
 def generate_dataset(num_students=80):
     """
@@ -302,9 +293,9 @@ def generate_dataset(num_students=80):
     students = []
     
     # Generate balanced distribution across risk classes
-    students_per_class = num_students // 3
+    students_per_class = num_students // 2
     
-    for risk_class in [0, 1, 2]:
+    for risk_class in [0, 1]:
         for i in range(students_per_class):
             student_id = f"STU-{str(len(students) + 1).zfill(4)}"
             record = generate_student_record(student_id, risk_class)
@@ -376,7 +367,7 @@ def save_to_csv(students, filename):
     
     print("\nRisk Label Distribution:")
     for risk in sorted(risk_counts.keys()):
-        label = {0: 'Low Risk', 1: 'Moderate Risk', 2: 'High Risk'}[risk]
+        label = {0: 'Good Standing', 1: 'At-Risk'}.get(risk, 'Unknown')
         print(f"  {label}: {risk_counts[risk]} students")
 
 if __name__ == '__main__':

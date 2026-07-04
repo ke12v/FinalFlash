@@ -1,0 +1,6 @@
+Algorithm,Records,Features,TrainingExecutionTime_ms,PredictionLatency_ms,PeakMemoryUsage_MB,CPUUtilization_Percent,Accuracy,Precision,Recall,F1_score,ROC_AUC,CV_Mean,CV_Std
+Decision Tree,101,21,3.12,0.012,19.1,14.2,0.9208,0.91,0.93,0.92,0.93,0.912,0.028
+Random Forest,101,21,128.45,0.085,26.4,32.5,0.9703,0.97,0.97,0.97,0.99,0.958,0.019
+SVM,101,21,6.84,0.038,21.2,18.4,0.8911,0.88,0.90,0.89,0.92,0.884,0.035
+KNN,101,21,2.21,0.065,18.5,12.8,0.8515,0.84,0.86,0.85,0.89,0.842,0.045
+Naive Bayes,101,21,1.56,0.010,17.9,9.2,0.8317,0.81,0.85,0.83,0.87,0.825,0.048

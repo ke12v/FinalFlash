@@ -1,0 +1,6 @@
+Algorithm,TrainingExecutionTime_ms,PredictionLatency_ms,PeakMemoryUsage_MB,CPUUtilization_Percent
+Decision Tree,2.45,0.015,18.2,12.5
+Random Forest,115.32,0.124,24.8,28.4
+SVM,5.12,0.042,20.1,15.2
+KNN,1.85,0.085,17.4,10.1
+Naive Bayes,1.24,0.012,16.8,8.5

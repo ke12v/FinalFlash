@@ -1,0 +1,6 @@
+Algorithm,Records,Features,TrainingExecutionTime_ms,PredictionLatency_ms,PeakMemoryUsage_MB,CPUUtilization_Percent,Accuracy,Precision,Recall,F1_score
+Decision Tree,101,28,1.4285,0.2541,0.0542,1.2,0.871,0.8845,0.871,0.8742
+Random Forest,101,28,124.5612,7.8421,2.145,4.8,0.9355,0.9412,0.9355,0.9355
+SVM,101,28,3.2145,0.8412,0.1241,0.8,0.9032,0.9124,0.9032,0.9014
+KNN,101,28,0.8421,2.4152,0.0842,0.4,0.8387,0.8541,0.8387,0.8412
+Naive Bayes,101,28,1.1024,0.4125,0.0412,0.2,0.8065,0.8241,0.8065,0.8012
